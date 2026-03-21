@@ -6,6 +6,15 @@ import { CheckCircle, CreditCard, Receipt, TrendingUp, MessageCircle, MapPin, Gl
 import { Reveal, customEase, bgColor } from './Shared';
 
 export const Features = () => {
+  const [dots, setDots] = React.useState<{ top: string; left: string }[]>([]);
+
+  React.useEffect(() => {
+    setDots([...Array(12)].map(() => ({
+      top: `${20 + Math.random() * 60}%`,
+      left: `${20 + Math.random() * 60}%`
+    })));
+  }, []);
+
   return (
     <section className={`py-24 px-6 bg-[${bgColor}]`}>
       <div className="max-w-7xl mx-auto">
@@ -22,7 +31,6 @@ export const Features = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 relative">
 
-          {/* Feature 1: Cobros Smart & Conciliación */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +49,6 @@ export const Features = () => {
                 </p>
               </div>
 
-              {/* Visual: Smart Match Animation */}
               <div className="flex-1 w-full bg-gray-50/50 rounded-[2.5rem] p-8 border border-gray-100 group-hover:bg-white transition-colors duration-500 relative overflow-hidden h-64 flex flex-col justify-center items-center">
                 <motion.div
                   animate={{ x: [0, 40, 0], opacity: [0.5, 1, 0.5] }}
@@ -76,7 +83,6 @@ export const Features = () => {
             </div>
           </motion.div>
 
-          {/* Feature 2: Análisis Predictivo de Deuda */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -94,7 +100,6 @@ export const Features = () => {
               </p>
             </div>
 
-            {/* Visual: Mini Projections Chart */}
             <div className="mt-12 flex items-end gap-2 h-32">
               {[40, 60, 45, 80, 55, 75, 90].map((h, i) => (
                 <motion.div
@@ -112,7 +117,6 @@ export const Features = () => {
             </div>
           </motion.div>
 
-          {/* Feature 3: WhatsApp Bot con IA */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -128,7 +132,6 @@ export const Features = () => {
               Tu secretaria 24/7 en el bolsillo.
             </p>
 
-            {/* Visual: Chat Simulation */}
             <div className="space-y-3 bg-gray-50 p-4 rounded-2xl border border-gray-100">
               <div className="bg-white p-3 rounded-2xl rounded-tr-none shadow-sm ml-auto max-w-[80%] border border-gray-100">
                 <p className="text-[10px] font-bold text-[#2e2928]">Envía un mensaje recordatorio al padre de Juan</p>
@@ -139,7 +142,6 @@ export const Features = () => {
             </div>
           </motion.div>
 
-          {/* Feature 4: Expediente Georeferenciado */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -157,13 +159,12 @@ export const Features = () => {
               </p>
             </div>
 
-            {/* Visual: Map Mockup with Dots */}
             <div className="w-full md:w-80 bg-white/10 backdrop-blur-2xl border border-white/20 p-2 rounded-[2.5rem] group-hover:scale-105 transition-transform duration-700 relative h-48 overflow-hidden">
               <div className="absolute inset-0 opacity-20">
                 <Globe className="w-full h-full text-white" />
               </div>
               {/* Student Density Dots */}
-              {[...Array(12)].map((_, i) => (
+              {dots.map((pos, i) => (
                 <motion.div
                   key={i}
                   initial={{ scale: 0 }}
@@ -171,8 +172,8 @@ export const Features = () => {
                   transition={{ delay: 1 + (i * 0.1) }}
                   className="absolute size-3 bg-white rounded-full shadow-lg shadow-white/50"
                   style={{
-                    top: `${20 + Math.random() * 60}%`,
-                    left: `${20 + Math.random() * 60}%`
+                    top: pos.top,
+                    left: pos.left
                   }}
                 >
                   <div className="absolute inset-0 animate-ping rounded-full bg-white opacity-40"></div>
@@ -181,6 +182,7 @@ export const Features = () => {
             </div>
             <div className="absolute inset-0 bg-gradient-to-br from-blue-700/50 to-transparent pointer-events-none"></div>
           </motion.div>
+
 
         </div>
       </div>
