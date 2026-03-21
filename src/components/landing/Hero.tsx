@@ -22,12 +22,16 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: customEase }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/50 border border-white/50 text-[10px] font-bold mb-12 text-[#2e2928]/60 uppercase tracking-[0.25em] backdrop-blur-sm"
+          className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/50 border border-white/50 text-[10px] font-bold mb-12 text-[#2e2928]/60 uppercase tracking-[0.25em] backdrop-blur-sm"
         >
-          <Sparkles className="size-3.5" />
-          Versión beta
+          <div className="flex items-center gap-2">
+            Versión beta disponible
+          </div>
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+          </span>
         </motion.div>
-
         <Reveal width="100%">
           <div className="relative inline-block">
             <h1 className="text-7xl md:text-[100px] font-semibold tracking-[-0.06em] text-[#2e2928] mb-10 leading-[0.9] inline-block">
@@ -49,14 +53,14 @@ export const Hero = () => {
           transition={{ duration: 1, delay: 0.4, ease: customEase }}
           className="flex flex-col sm:flex-row items-center justify-center gap-5 relative"
         >
-          <InteractiveButton 
-            text="Reservar Demo" 
+          <InteractiveButton
+            text="Reservar Demo"
             hoverText="¡Hablemos ahora!"
             className="w-full sm:w-auto bg-[#2e2928] text-[#f6f6f7] rounded-full font-bold text-[16px] shadow-2xl shadow-[#2e2928]/20"
             icon={ChevronRight}
           />
-          <InteractiveButton 
-            text="Ver características" 
+          <InteractiveButton
+            text="Ver características"
             hoverText="Explorar funciones"
             className="w-full sm:w-auto bg-[#f6f6f7] border-2 border-[#2e2928]/5 text-[#2e2928] rounded-full font-bold text-[16px] hover:bg-white hover:border-[#2e2928]/10 shadow-sm"
           />

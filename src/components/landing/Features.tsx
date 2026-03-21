@@ -43,7 +43,7 @@ export const Features = () => {
 
               {/* Visual: Smart Match Animation */}
               <div className="flex-1 w-full bg-gray-50/50 rounded-[2.5rem] p-8 border border-gray-100 group-hover:bg-white transition-colors duration-500 relative overflow-hidden h-64 flex flex-col justify-center items-center">
-                <motion.div 
+                <motion.div
                   animate={{ x: [0, 40, 0], opacity: [0.5, 1, 0.5] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute top-10 left-10 p-3 bg-white border border-gray-100 rounded-xl shadow-sm flex items-center gap-3"
@@ -54,7 +54,7 @@ export const Features = () => {
                   <span className="text-xs font-bold text-gray-500">Transferencia #829</span>
                 </motion.div>
 
-                <motion.div 
+                <motion.div
                   animate={{ x: [0, -40, 0], opacity: [0.5, 1, 0.5] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute bottom-10 right-10 p-3 bg-white border border-gray-100 rounded-xl shadow-sm flex items-center gap-3"
@@ -93,7 +93,7 @@ export const Features = () => {
                 Anticípate a la morosidad antes de que ocurra con proyecciones de flujo de caja.
               </p>
             </div>
-            
+
             {/* Visual: Mini Projections Chart */}
             <div className="mt-12 flex items-end gap-2 h-32">
               {[40, 60, 45, 80, 55, 75, 90].map((h, i) => (
@@ -106,7 +106,7 @@ export const Features = () => {
                 />
               ))}
             </div>
-            
+
             <div className="absolute top-0 right-0 p-12">
               <div className="w-2 h-2 rounded-full bg-blue-500 animate-ping"></div>
             </div>
@@ -145,7 +145,7 @@ export const Features = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: customEase }}
             viewport={{ once: true }}
-            className="md:col-span-8 bg-blue-600 rounded-[3.5rem] p-12 flex flex-col md:flex-row items-center gap-12 relative overflow-hidden group shadow-2xl shadow-blue-600/10"
+            className="md:col-span-8 bg-[#2e2928] rounded-[3.5rem] p-12 flex flex-col md:flex-row items-center gap-12 relative overflow-hidden group shadow-2xl shadow-blue-600/10"
           >
             <div className="md:flex-1 z-10">
               <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-8 border border-white/20 backdrop-blur-md">
