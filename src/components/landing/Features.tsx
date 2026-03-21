@@ -16,7 +16,7 @@ export const Features = () => {
         </Reveal>
         <Reveal delay={0.2}>
           <p className="text-gray-400 text-xl md:text-2xl max-w-2xl font-medium mb-20 tracking-tight leading-relaxed">
-            Cada detalle ha sido diseñado para la velocidad y la claridad operativa.
+            Cada detalle ha sido diseñado para velocidad y claridad operativa.
           </p>
         </Reveal>
 
@@ -125,16 +125,16 @@ export const Features = () => {
             </div>
             <h3 className="text-2xl font-bold tracking-tighter mb-4 text-[#2e2928]">WhatsApp Bot IA</h3>
             <p className="text-gray-400 font-medium text-lg leading-snug mb-8">
-              Tu secretaria 24/7 en el bolsillo de cada representante.
+              Tu secretaria 24/7 en el bolsillo.
             </p>
 
             {/* Visual: Chat Simulation */}
             <div className="space-y-3 bg-gray-50 p-4 rounded-2xl border border-gray-100">
               <div className="bg-white p-3 rounded-2xl rounded-tr-none shadow-sm ml-auto max-w-[80%] border border-gray-100">
-                <p className="text-[10px] font-bold text-[#2e2928]">¿Cuál es mi saldo actual?</p>
+                <p className="text-[10px] font-bold text-[#2e2928]">Envía un mensaje recordatorio al padre de Juan</p>
               </div>
               <div className="bg-green-500 p-3 rounded-2xl rounded-tl-none shadow-sm mr-auto max-w-[80%]">
-                <p className="text-[10px] font-bold text-white">¡Hola! Tu saldo al día de hoy es de $150. ¿Deseas el link de pago?</p>
+                <p className="text-[10px] font-bold text-white">¡Hola! he enviado al padre de Juan <br /> un mensaje recordatorio.</p>
               </div>
             </div>
           </motion.div>
@@ -153,7 +153,7 @@ export const Features = () => {
               </div>
               <h3 className="text-3xl font-bold tracking-tighter mb-4 text-white">Georeferenciación</h3>
               <p className="text-blue-100 font-medium text-xl leading-relaxed">
-                Conoce dónde están tus alumnos, optimiza tus rutas de transporte y campañas.
+                Conoce dónde están tus alumnos, optimiza tus rutas de transporte.
               </p>
             </div>
 

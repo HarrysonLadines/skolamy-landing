@@ -14,13 +14,7 @@ export const Footer = () => {
             </div>
             <span className="font-extrabold tracking-tighter text-2xl text-[#2e2928]">Skolamy</span>
           </div>
-          <p className="text-gray-400 text-lg font-medium max-w-xs leading-relaxed">Elevando el estándar global de la educación moderna.</p>
-        </div>
-
-        <div className="flex flex-wrap gap-12 text-[12px] font-black text-gray-400 uppercase tracking-[0.3em]">
-          <span className="hover:text-[#2e2928] transition-colors">Privacidad</span>
-          <span className="hover:text-[#2e2928] transition-colors">Seguridad</span>
-          <span className="hover:text-[#2e2928] transition-colors">Términos</span>
+          <p className="text-gray-400 text-lg font-medium  leading-relaxed">Elevando el estándar global de la educación moderna.</p>
         </div>
 
         <p className="text-[12px] font-black text-gray-300 uppercase tracking-[0.3em]">
