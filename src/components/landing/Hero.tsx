@@ -49,7 +49,7 @@ export const Hero = () => {
           className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/50 border border-white/50 text-[10px] font-bold mb-12 text-[#2e2928]/60 uppercase tracking-[0.25em] backdrop-blur-sm"
         >
           <div className="flex items-center gap-2">
-            Versión beta disponible
+            Versión beta
           </div>
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
