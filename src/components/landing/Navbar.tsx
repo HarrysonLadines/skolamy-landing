@@ -79,16 +79,13 @@ export const Navbar = () => {
 
         {/* Right Action - Sharp Style */}
         <div className="flex items-center justify-end gap-4 flex-1">
-          <Link href="/dashboard" className="hidden lg:block text-[13px] font-semibold text-gray-400 hover:text-black transition-colors">
-            Log in
-          </Link>
           <Link href="/dashboard">
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="bg-[#f0f0f1] text-[#2e2928] px-5 py-2.5 rounded-xl text-[13px] font-bold hover:bg-white border border-gray-200/50 transition-all flex items-center gap-2"
             >
-              Register
+              Iniciar
             </motion.button>
           </Link>
         </div>
