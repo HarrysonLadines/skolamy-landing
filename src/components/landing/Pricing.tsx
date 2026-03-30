@@ -16,8 +16,6 @@ export const Pricing = () => {
         <div className="text-center mb-16">
           <Reveal delay={0.1}>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100/50 text-indigo-600 text-[11px] font-bold mb-6 uppercase tracking-[0.2em]">
-              <Sparkles size={12} />
-              <span>Simplicidad Absoluta</span>
             </div>
           </Reveal>
           <Reveal delay={0.2}>
@@ -38,9 +36,9 @@ export const Pricing = () => {
           <div className="bg-white rounded-[3rem] p-2 border border-gray-100 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.05)] relative group overflow-hidden">
             {/* Gradiente en hover */}
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-            
+
             <div className="relative bg-white rounded-[2.5rem] border border-gray-50/50 flex flex-col md:flex-row overflow-hidden isolate">
-              
+
               {/* Columna Izquierda: Información y Precio */}
               <div className="p-10 md:p-14 flex-1 flex flex-col justify-between relative z-10">
                 <div>
@@ -53,7 +51,7 @@ export const Pricing = () => {
                       <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">Para instituciones</p>
                     </div>
                   </div>
-                  
+
                   <div className="mb-8">
                     <div className="flex items-baseline gap-2 mb-2">
                       <span className="text-5xl md:text-6xl font-black text-[#2e2928] tracking-tighter">Personalizado</span>
@@ -75,18 +73,17 @@ export const Pricing = () => {
               {/* Columna Derecha: Beneficios */}
               <div className="bg-gray-50/50 p-10 md:p-14 flex-1 border-t md:border-t-0 md:border-l border-gray-100 relative z-10">
                 <h4 className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-8">¿Qué incluye el plan?</h4>
-                
+
                 <ul className="space-y-5">
                   {[
                     "Panel administrativo completo",
                     "Gestión de alumnos y representantes",
                     "Módulo avanzado de cobranzas",
                     "Cuenta corriente y reportes",
-                    "Bot preventivo de IA (WhatsApp)",
-                    "App para representantes",
+                    "Bot preventivo de IA",
                     "Soporte prioritario 24/7"
                   ].map((benefit, i) => (
-                    <motion.li 
+                    <motion.li
                       key={i}
                       initial={{ opacity: 0, x: 10 }}
                       whileInView={{ opacity: 1, x: 0 }}
