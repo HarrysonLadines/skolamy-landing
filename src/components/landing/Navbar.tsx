@@ -116,7 +116,7 @@ export const Navbar = () => {
 
         {/* Right Action - Sharp Style */}
         <div className="flex items-center justify-end gap-4 flex-1">
-          <Link href="/dashboard">
+          <Link href="/">
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

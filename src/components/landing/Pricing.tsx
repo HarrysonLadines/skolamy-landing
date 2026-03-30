@@ -8,10 +8,6 @@ import { Reveal, customEase, InteractiveButton } from './Shared';
 export const Pricing = () => {
   return (
     <section id="precios" className="py-32 px-6 bg-[#f6f6f7] relative overflow-hidden">
-      {/* Elementos de fondo decorativos */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none transform translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none transform -translate-x-1/2 translate-y-1/2" />
-
       <div className="max-w-7xl mx-auto relative z-10 flex flex-col items-center">
         <div className="text-center mb-16">
           <Reveal delay={0.1}>
