@@ -21,6 +21,39 @@ export const Navbar = () => {
     }
   });
 
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (!targetElement) return;
+
+    const navHeight = 80;
+    const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - navHeight;
+    const startPosition = window.scrollY;
+    const distance = targetPosition - startPosition;
+    const duration = 1200;
+    let start: number | null = null;
+
+    const easeInOutCubic = (t: number, b: number, c: number, d: number) => {
+      t /= d / 2;
+      if (t < 1) return (c / 2) * t * t * t + b;
+      t -= 2;
+      return (c / 2) * (t * t * t + 2) + b;
+    };
+
+    const animation = (currentTime: number) => {
+      if (start === null) start = currentTime;
+      const timeElapsed = currentTime - start;
+      const run = easeInOutCubic(timeElapsed, startPosition, distance, duration);
+      window.scrollTo(0, run);
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    };
+
+    requestAnimationFrame(animation);
+  };
+
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -66,15 +99,19 @@ export const Navbar = () => {
 
         {/* Navigation Links - Capsule Style */}
         <div className="hidden md:flex items-center bg-[#f0f0f1]/50 p-1 rounded-2xl border border-gray-200/50 backdrop-blur-md">
-          {['Inicio', 'Beneficios', 'Precios'].map((item) => (
-            <Link
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="px-5 py-2 text-[13px] font-semibold text-gray-500 hover:text-black hover:bg-white rounded-xl transition-all duration-300"
-            >
-              {item}
-            </Link>
-          ))}
+          {['Inicio', 'Beneficios', 'Precios'].map((item) => {
+            const id = item.toLowerCase();
+            return (
+              <a
+                key={item}
+                href={`#${id}`}
+                onClick={(e) => handleScroll(e, id)}
+                className="px-5 py-2 text-[13px] font-semibold text-gray-500 hover:text-black hover:bg-white rounded-xl transition-all duration-300"
+              >
+                {item}
+              </a>
+            );
+          })}
         </div>
 
         {/* Right Action - Sharp Style */}
