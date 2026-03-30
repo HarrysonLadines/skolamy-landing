@@ -85,7 +85,7 @@ export const Hero = () => {
           />
           <InteractiveButton
             text="Ver características"
-            hoverText="Explorar funciones"
+            hoverText="Explorar funcionalidades"
             className="w-full sm:w-auto bg-[#f6f6f7] border-2 border-[#2e2928]/5 text-[#2e2928] rounded-full font-bold text-[16px] hover:bg-white hover:border-[#2e2928]/10 shadow-sm"
           />
         </motion.div>

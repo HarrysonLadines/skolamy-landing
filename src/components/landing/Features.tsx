@@ -2,18 +2,10 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, CreditCard, Receipt, TrendingUp, MessageCircle, MapPin, Globe } from 'lucide-react';
+import { CheckCircle, CreditCard, Receipt, TrendingUp, MessageCircle, Wallet, ArrowDownUp, Download } from 'lucide-react';
 import { Reveal, customEase, bgColor } from './Shared';
 
 export const Features = () => {
-  const [dots, setDots] = React.useState<{ top: string; left: string }[]>([]);
-
-  React.useEffect(() => {
-    setDots([...Array(12)].map(() => ({
-      top: `${20 + Math.random() * 60}%`,
-      left: `${20 + Math.random() * 60}%`
-    })));
-  }, []);
 
   return (
     <section className={`py-24 px-6 bg-[${bgColor}]`}>
@@ -151,34 +143,48 @@ export const Features = () => {
           >
             <div className="md:flex-1 z-10">
               <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-8 border border-white/20 backdrop-blur-md">
-                <MapPin className="text-white size-7" />
+                <Wallet className="text-white size-7" />
               </div>
-              <h3 className="text-3xl font-bold tracking-tighter mb-4 text-white">Georeferenciación</h3>
+              <h3 className="text-3xl font-bold tracking-tighter mb-4 text-white">Cuenta Corriente</h3>
               <p className="text-blue-100 font-medium text-xl leading-relaxed">
-                Conoce dónde están tus alumnos, optimiza tus rutas de transporte.
+                Historial permanente de cada alumno. Gestiona entradas, salidas y exporta reportes en segundos.
               </p>
             </div>
 
-            <div className="w-full md:w-80 bg-white/10 backdrop-blur-2xl border border-white/20 p-2 rounded-[2.5rem] group-hover:scale-105 transition-transform duration-700 relative h-48 overflow-hidden">
-              <div className="absolute inset-0 opacity-20">
-                <Globe className="w-full h-full text-white" />
+            <div className="w-full md:w-80 bg-white/10 backdrop-blur-2xl border border-white/20 p-6 rounded-[2.5rem] group-hover:scale-105 transition-transform duration-700 relative overflow-hidden h-64">
+              <div className="flex justify-between items-center mb-6">
+                <div className="flex items-center gap-2">
+                  <div className="size-8 rounded-lg bg-white/10 flex items-center justify-center">
+                    <ArrowDownUp className="size-4 text-white" />
+                  </div>
+                  <span className="text-xs font-bold text-white/60">Movimientos</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/20 px-3 py-1.5 rounded-full border border-white/20">
+                  <Download className="size-3 text-white" />
+                  <span className="text-[10px] font-bold text-white uppercase tracking-wider">Exportar</span>
+                </div>
               </div>
-              {/* Student Density Dots */}
-              {dots.map((pos, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ delay: 1 + (i * 0.1) }}
-                  className="absolute size-3 bg-white rounded-full shadow-lg shadow-white/50"
-                  style={{
-                    top: pos.top,
-                    left: pos.left
-                  }}
-                >
-                  <div className="absolute inset-0 animate-ping rounded-full bg-white opacity-40"></div>
-                </motion.div>
-              ))}
+
+              <div className="space-y-4">
+                {[
+                  { label: 'Pago Mensualidad', amount: '+ $350.00', type: 'in' },
+                  { label: 'Matrícula 2026', amount: '+ $500.00', type: 'in' },
+                  { label: 'Nota Crédito: Beca', amount: '- $150.00', type: 'out' }
+                ].map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ x: 20, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0.5 + (idx * 0.1) }}
+                    className="flex justify-between items-center bg-white/5 p-3 rounded-xl border border-white/10"
+                  >
+                    <span className="text-[11px] font-semibold text-white/80">{item.label}</span>
+                    <span className={`text-[11px] font-bold ${item.type === 'in' ? 'text-green-400' : 'text-red-400'}`}>
+                      {item.amount}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
             </div>
             <div className="absolute inset-0 bg-gradient-to-br from-blue-700/50 to-transparent pointer-events-none"></div>
           </motion.div>
