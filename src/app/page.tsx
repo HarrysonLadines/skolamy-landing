@@ -5,6 +5,7 @@ import { CustomCursor, GridBackground, mainColor, bgColor } from '@/components/l
 import { Navbar } from '@/components/landing/Navbar';
 import { Hero } from '@/components/landing/Hero';
 import { Features } from '@/components/landing/Features';
+import { Pricing } from '@/components/landing/Pricing';
 import { CTA } from '@/components/landing/CTA';
 import { Footer } from '@/components/landing/Footer';
 
@@ -18,6 +19,7 @@ export default function ScholarLanding() {
       <main>
         <Hero />
         <Features />
+        <Pricing />
         <CTA />
       </main>
 

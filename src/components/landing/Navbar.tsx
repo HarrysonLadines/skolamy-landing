@@ -66,7 +66,7 @@ export const Navbar = () => {
 
         {/* Navigation Links - Capsule Style */}
         <div className="hidden md:flex items-center bg-[#f0f0f1]/50 p-1 rounded-2xl border border-gray-200/50 backdrop-blur-md">
-          {['Producto', 'Soluciones', 'Seguridad', 'Precios'].map((item) => (
+          {['Inicio', 'Beneficios', 'Precios'].map((item) => (
             <Link
               key={item}
               href={`#${item.toLowerCase()}`}

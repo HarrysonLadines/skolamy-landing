@@ -8,7 +8,7 @@ import { Reveal, customEase, bgColor } from './Shared';
 export const Features = () => {
 
   return (
-    <section className={`py-24 px-6 bg-[${bgColor}]`}>
+    <section id="beneficios" className={`py-24 px-6 bg-[${bgColor}]`}>
       <div className="max-w-7xl mx-auto">
         <Reveal delay={0.1}>
           <h2 className="text-6xl md:text-8xl font-semibold text-[#2e2928] mb-8 tracking-[-0.06em] leading-[0.85]">

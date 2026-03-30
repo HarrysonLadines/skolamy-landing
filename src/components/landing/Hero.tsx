@@ -40,7 +40,7 @@ export const Hero = () => {
   const springScale = useSpring(scale, { stiffness: 100, damping: 30 });
 
   return (
-    <section className="pt-52 pb-32 px-6 relative overflow-hidden">
+    <section id="inicio" className="pt-52 pb-32 px-6 relative overflow-hidden">
       <div className="max-w-5xl mx-auto text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
