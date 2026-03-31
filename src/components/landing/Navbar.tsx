@@ -6,6 +6,13 @@ import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Command } from 'lucide-react';
 import { customEase } from './Shared';
 
+const easeInOutCubic = (t: number, b: number, c: number, d: number) => {
+  t /= d / 2;
+  if (t < 1) return (c / 2) * t * t * t + b;
+  t -= 2;
+  return (c / 2) * (t * t * t + 2) + b;
+};
+
 export const Navbar = () => {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
@@ -21,7 +28,7 @@ export const Navbar = () => {
     }
   });
 
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+  const handleScroll = React.useCallback((e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
     if (!targetElement) return;
@@ -32,13 +39,6 @@ export const Navbar = () => {
     const distance = targetPosition - startPosition;
     const duration = 1200;
     let start: number | null = null;
-
-    const easeInOutCubic = (t: number, b: number, c: number, d: number) => {
-      t /= d / 2;
-      if (t < 1) return (c / 2) * t * t * t + b;
-      t -= 2;
-      return (c / 2) * (t * t * t + 2) + b;
-    };
 
     const animation = (currentTime: number) => {
       if (start === null) start = currentTime;
@@ -51,8 +51,7 @@ export const Navbar = () => {
     };
 
     requestAnimationFrame(animation);
-  };
-
+  }, []);
 
   return (
     <motion.nav
