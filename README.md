@@ -2,14 +2,6 @@
 
 Professional landing page for **Skolamy**, a modern SaaS platform designed for comprehensive educational management. Built with performance and user experience in mind.
 
-## 🚀 Features
-
-- **Smart Collections**: Automated payment reconciliation and tracking.
-- **Predictive Analytics**: Debt projection and cash flow forecasting.
-- **AI WhatsApp Bot**: 24/7 automated communication for staff.
-- **Geographic Insights**: Georeferenced student records for logistics and transport optimization.
-- **Premium Design**: Fluid animations and a modern, responsive interface using Framer Motion.
-
 ## 🛠️ Stack
 
 - **Framework**: [Next.js](https://nextjs.org/)
@@ -43,7 +35,3 @@ Professional landing page for **Skolamy**, a modern SaaS platform designed for c
    ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## 📄 License
-
-This project is private and intended for internal use.
