@@ -2,31 +2,7 @@
 
 import React from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import {
-  Sparkles,
-  ChevronRight,
-  TrendingUp,
-  Users,
-  CreditCard,
-  LayoutDashboard,
-  UserCheck,
-  FileText,
-  Bell,
-  Settings,
-  LogOut,
-  Search,
-  Plus,
-  Send,
-  History,
-  GraduationCap,
-  Calendar,
-  Command,
-  ArrowUpRight,
-  Clock,
-  AlertCircle,
-  MoreVertical,
-  MessageSquare
-} from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { Reveal, customEase, InteractiveButton } from './Shared';
 import Image from 'next/image';
 

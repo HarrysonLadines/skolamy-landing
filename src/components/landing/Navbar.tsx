@@ -3,8 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import { Command } from 'lucide-react';
-import { customEase } from './Shared';
+import { SkolamyIcon } from './SkolamyIcon';
 
 const easeInOutCubic = (t: number, b: number, c: number, d: number) => {
   t /= d / 2;
@@ -89,11 +88,17 @@ export const Navbar = () => {
         <div className="flex items-center gap-2 flex-1">
           <motion.div
             whileHover={{ rotate: -10 }}
-            className="w-8 h-8 bg-[#2e2928] rounded-lg flex items-center justify-center"
+            className="w-8 h-8 rounded-lg flex items-center justify-center relative overflow-hidden"
           >
-            <Command className="text-white h-4 w-4" />
+            <div className="absolute inset-0 p-1.5 flex items-center justify-center">
+              <SkolamyIcon />
+            </div>
           </motion.div>
-          <span className="font-bold tracking-tight text-xl text-[#2e2928]">Skolamy</span>
+
+          <span className="font-bold tracking-tighter text-2xl text-slate-900">
+            Skolamy
+            <span className="text-blue-600">.</span>
+          </span>
         </div>
 
         {/* Navigation Links - Capsule Style */}
@@ -129,3 +134,4 @@ export const Navbar = () => {
     </motion.nav>
   );
 };
+

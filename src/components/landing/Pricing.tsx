@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, Command, Sparkles, ArrowRight } from 'lucide-react';
+import { CheckCircle, Command, ArrowRight } from 'lucide-react';
 import { Reveal, customEase, InteractiveButton } from './Shared';
 
 export const Pricing = () => {

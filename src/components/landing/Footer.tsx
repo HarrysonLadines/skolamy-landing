@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Command } from 'lucide-react';
+import { SkolamyIcon } from './SkolamyIcon';
 
 export const Footer = () => {
   return (
@@ -9,8 +9,10 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-16">
         <div className="space-y-6">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-[#2e2928] rounded-xl flex items-center justify-center shadow-lg shadow-[#2e2928]/10">
-              <Command className="h-6 w-6 text-white" />
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center relative overflow-hidden">
+              <div className="absolute inset-0 p-1.5 flex items-center justify-center">
+                <SkolamyIcon />
+              </div>
             </div>
             <span className="font-extrabold tracking-tighter text-2xl text-[#2e2928]">Skolamy</span>
           </div>
