@@ -39,9 +39,6 @@ export const Pricing = () => {
               <div className="p-10 md:p-14 flex-1 flex flex-col justify-between relative z-10">
                 <div>
                   <div className="flex items-center gap-3 mb-8">
-                    <div className="w-12 h-12 bg-[#2e2928] rounded-2xl flex items-center justify-center shadow-lg shadow-[#2e2928]/20">
-                      <Command className="text-white h-5 w-5" />
-                    </div>
                     <div>
                       <h3 className="text-2xl font-bold text-[#2e2928] tracking-tight">Plan Integral</h3>
                       <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">Para instituciones</p>
