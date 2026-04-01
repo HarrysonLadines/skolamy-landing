@@ -5,19 +5,13 @@ import Link from 'next/link';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { SkolamyIcon } from './SkolamyIcon';
 
-const easeInOutCubic = (t: number, b: number, c: number, d: number) => {
-  t /= d / 2;
-  if (t < 1) return (c / 2) * t * t * t + b;
-  t -= 2;
-  return (c / 2) * (t * t * t + 2) + b;
-};
 
 export const Navbar = () => {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
+  useMotionValueEvent(scrollY, "change", (latest: number) => {
     const previous = scrollY.getPrevious() ?? 0;
     setScrolled(latest > 50);
     if (latest > previous && latest > 150) {
@@ -26,31 +20,6 @@ export const Navbar = () => {
       setHidden(false);
     }
   });
-
-  const handleScroll = React.useCallback((e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    const targetElement = document.getElementById(targetId);
-    if (!targetElement) return;
-
-    const navHeight = 80;
-    const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - navHeight;
-    const startPosition = window.scrollY;
-    const distance = targetPosition - startPosition;
-    const duration = 1200;
-    let start: number | null = null;
-
-    const animation = (currentTime: number) => {
-      if (start === null) start = currentTime;
-      const timeElapsed = currentTime - start;
-      const run = easeInOutCubic(timeElapsed, startPosition, distance, duration);
-      window.scrollTo(0, run);
-      if (timeElapsed < duration) {
-        requestAnimationFrame(animation);
-      }
-    };
-
-    requestAnimationFrame(animation);
-  }, []);
 
   return (
     <motion.nav
@@ -109,7 +78,6 @@ export const Navbar = () => {
               <a
                 key={item}
                 href={`#${id}`}
-                onClick={(e) => handleScroll(e, id)}
                 className="px-5 py-2 text-[13px] font-semibold text-gray-500 hover:text-black hover:bg-white rounded-xl transition-all duration-300"
               >
                 {item}
