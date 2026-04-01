@@ -120,7 +120,7 @@ export const Navbar = () => {
 
         {/* Right Action - Sharp Style */}
         <div className="flex items-center justify-end gap-4 flex-1">
-          <Link href="/">
+          <a href="https://wa.me/3435263119?text=Hola,%20quisiera%20iniciar%20con%20Skolamy" target="_blank" rel="noopener noreferrer">
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -128,7 +128,7 @@ export const Navbar = () => {
             >
               Iniciar
             </motion.button>
-          </Link>
+          </a>
         </div>
       </motion.div>
     </motion.nav>

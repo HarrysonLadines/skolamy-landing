@@ -59,11 +59,14 @@ export const Hero = () => {
             hoverText="¡Hablemos ahora!"
             className="w-full sm:w-auto bg-[#2e2928] text-[#f6f6f7] rounded-full font-bold text-[16px] shadow-2xl shadow-[#2e2928]/20"
             icon={ChevronRight}
+            href="https://wa.me/3435263119?text=Hola,%20me%20gustar%C3%ADa%20reservar%20una%20demo%20de%20Skolamy"
+            target="_blank"
           />
           <InteractiveButton
             text="Ver características"
             hoverText="Explorar funcionalidades"
             className="w-full sm:w-auto bg-[#f6f6f7] border-2 border-[#2e2928]/5 text-[#2e2928] rounded-full font-bold text-[16px] hover:bg-white hover:border-[#2e2928]/10 shadow-sm"
+            href="#beneficios"
           />
         </motion.div>
       </div>

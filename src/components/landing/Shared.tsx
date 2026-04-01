@@ -79,7 +79,10 @@ export const InteractiveButton = ({
   className = "",
   icon: Icon,
   px = "px-10",
-  py = "py-5"
+  py = "py-5",
+  onClick,
+  href,
+  target,
 }: {
   text: string;
   hoverText?: string;
@@ -87,29 +90,52 @@ export const InteractiveButton = ({
   icon?: any;
   px?: string;
   py?: string;
+  onClick?: (e: any) => void;
+  href?: string;
+  target?: string;
 }) => {
+  const content = (
+    <motion.div
+      variants={{
+        initial: { y: 0 },
+        hover: { y: "-100%" }
+      }}
+      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+      className="w-full"
+    >
+      <div className={`flex items-center justify-center gap-2 ${px} ${py} whitespace-nowrap`}>
+        {text} {Icon && <Icon className="size-5 group-hover:translate-x-1 transition-transform" />}
+      </div>
+      <div className={`flex items-center justify-center gap-2 ${px} ${py} absolute top-full left-0 w-full whitespace-nowrap bg-inherit text-inherit`}>
+        {hoverText || text} {Icon && <Icon className="size-5" />}
+      </div>
+    </motion.div>
+  );
+
+  if (href) {
+    return (
+      <motion.a
+        href={href}
+        target={target}
+        onClick={onClick}
+        whileHover="hover"
+        initial="initial"
+        whileTap={{ scale: 0.96 }}
+        className={`relative overflow-hidden group block text-center ${className}`}
+      >
+        {content}
+      </motion.a>
+    );
+  }
+
   return (
     <motion.button
+      onClick={onClick}
       whileHover="hover"
       initial="initial"
-      whileTap={{ scale: 0.96 }}
       className={`relative overflow-hidden group ${className}`}
     >
-      <motion.div
-        variants={{
-          initial: { y: 0 },
-          hover: { y: "-100%" }
-        }}
-        transition={{ type: "spring", stiffness: 400, damping: 30 }}
-        className="w-full"
-      >
-        <div className={`flex items-center justify-center gap-2 ${px} ${py} whitespace-nowrap`}>
-          {text} {Icon && <Icon className="size-5 group-hover:translate-x-1 transition-transform" />}
-        </div>
-        <div className={`flex items-center justify-center gap-2 ${px} ${py} absolute top-full left-0 w-full whitespace-nowrap bg-inherit text-inherit`}>
-          {hoverText || text} {Icon && <Icon className="size-5" />}
-        </div>
-      </motion.div>
+      {content}
     </motion.button>
   );
 };

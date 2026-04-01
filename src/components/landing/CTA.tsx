@@ -31,6 +31,8 @@ export const CTA = () => {
             className="w-full sm:w-auto bg-[#2e2928] text-white rounded-full font-bold text-lg shadow-xl shadow-black/5"
             px="px-12"
             py="py-6"
+            href="https://wa.me/3435263119?text=Hola,%20estoy%20listo%20para%20empezar%20con%20Skolamy"
+            target="_blank"
           />
           <InteractiveButton
             text="Agendar llamada"
@@ -38,6 +40,8 @@ export const CTA = () => {
             className="w-full sm:w-auto bg-white text-[#2e2928] border border-[#2e2928]/10 rounded-full font-bold text-lg hover:bg-gray-50 shadow-sm"
             px="px-12"
             py="py-6"
+            href="https://wa.me/3435263119?text=Hola,%20quisiera%20agendar%20una%20llamada%20para%20conocer%20Skolamy"
+            target="_blank"
           />
         </div>
 

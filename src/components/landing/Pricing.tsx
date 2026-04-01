@@ -60,6 +60,8 @@ export const Pricing = () => {
                   hoverText="Obtener Presupuesto"
                   className="w-full bg-[#2e2928] text-white rounded-2xl font-bold py-5 mt-4 shadow-xl shadow-[#2e2928]/10 group-hover:scale-[1.02] transition-transform"
                   icon={ArrowRight}
+                  href="https://wa.me/3435263119?text=Hola,%20quisiera%20contactar%20a%20ventas%20para%20obtener%20un%20presupuesto%20de%20Skolamy"
+                  target="_blank"
                 />
               </div>
 
