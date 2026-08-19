@@ -87,9 +87,9 @@ export const Hero = () => {
           }}
           className="perspective-1000 transform-gpu"
         >
-          <div className="bg-[#f8fafc]/50 p-2 md:p-4 rounded-[3rem] border border-[#2e2928]/5 shadow-2xl backdrop-blur-3xl overflow-hidden relative group">
-            <div className="bg-[#f8fafc] rounded-[2.5rem] border border-[#2e2928]/5 shadow-inner overflow-hidden aspect-[16/10] flex relative z-10 font-sans">
-              <Image src="/Skolamy-dashboard.png" alt="Skolamy Dashboard" fill className="object-contain drop-shadow-sm rounded-xl" />
+          <div className="bg-[#f8fafc]/50 p-0 md:p-2 rounded-[1rem] border border-[#2e2928]/5 shadow-2xl backdrop-blur-3xl overflow-hidden relative group">
+            <div className="bg-[#f8fafc] rounded-[2.5rem] border border-[#2e2928]/5 shadow-inner overflow-hidden relative z-10 font-sans">
+              <Image src="/Skolamy-dashboard.png" alt="Skolamy Dashboard" width={2560} height={1600} className="w-full h-auto block drop-shadow-sm rounded-xl" />
             </div>
           </div>
         </motion.div>
