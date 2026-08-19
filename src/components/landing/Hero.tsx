@@ -19,20 +19,6 @@ export const Hero = () => {
   return (
     <section id="inicio" className="pt-52 pb-32 px-6 relative overflow-hidden">
       <div className="max-w-5xl mx-auto text-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: customEase }}
-          className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/50 border border-white/50 text-[10px] font-bold mb-12 text-[#2e2928]/60 uppercase tracking-[0.25em] backdrop-blur-sm"
-        >
-          <div className="flex items-center gap-2">
-            Versión beta
-          </div>
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-          </span>
-        </motion.div>
         <Reveal width="100%">
           <div className="relative inline-block">
             <h1 className="text-7xl md:text-[100px] font-semibold tracking-[-0.06em] text-[#2e2928] mb-10 leading-[0.9] inline-block">
