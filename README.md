@@ -35,3 +35,5 @@ Professional landing page for **Skolamy**, a modern SaaS platform designed for c
    ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+<img width="1306" height="369" alt="image" src="https://github.com/user-attachments/assets/dbf21ae7-120c-4d3c-8f8b-c1a065d3661a" />
